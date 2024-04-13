@@ -11,6 +11,8 @@ export default {
         grey: '#646A69',
         cream: '#150958',
         bud: '#D9DEDD',
+        foo: '#383b56',
+        soc: '#4d4480',
       },
       fontFamily: {
         ribeye: ['Ribeye Marrow'],

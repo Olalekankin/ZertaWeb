@@ -4,32 +4,36 @@ import { MdOutlineCall, MdOutlineEmail, MdOutlineLocationOn } from 'react-icons/
 
 const Contact = () => {
   return (
-    <section className='bg-pat bg-cover bg-no-repeat p-4 md:p-0 md:px-12 lg:px-24 md:py-8 lg:py-24 w-full flex flex-col md:flex-row bg-primary mt-28'>
-      <div className='text-white font-roboto px-5 w-full md:w-1/2'>
-        <h1 className='text-6xl'>Contact Us</h1>
-        <p className='text-lg font-normal mt-6'>
+    <section className='bg-pat bg-cover bg-no-repeat p-4 md:p-0 md:px-12 lg:px-24 md:py-8 lg:py-24 w-full flex flex-col md:flex-row bg-bud mt-28'>
+      <div className='text-primary font-roboto px-5 w-full md:w-1/2'>
+        <h1 className='text-2xl md:text-6xl'>Contact Us</h1>
+        <p className='text-base md:text-lg font-medium mt-6'>
           We are here to help you make a your world better, one product at a
           time.
         </p>
         <div className='mt-16 space-y-3'>
           <div className='flex items-center space-x-3'>
-            <MdOutlineEmail className='text-bgreen text-2xl' />
-            <p className='text-lg font-medium'>zertahq@gmail.com</p>
+            <MdOutlineEmail className='text-link text-2xl' />
+            <p className='text-base md:text-lg'>
+              zertahq@gmail.com
+            </p>
           </div>
           <div className='flex items-center space-x-3'>
-            <MdOutlineCall className='text-bgreen text-2xl' />
-            <p className='text-lg font-medium'>(234) 903-1975-424</p>
+            <MdOutlineCall className='text-link text-2xl' />
+            <p className='text-base md:text-lg'>
+              (234) 903-1975-424
+            </p>
           </div>
           <div className='flex items-center space-x-3'>
-            <MdOutlineLocationOn className='text-bgreen text-2xl' />
-            <p className='text-lg font-medium'>
+            <MdOutlineLocationOn className='text-link text-2xl' />
+            <p className='text-base md:text-lg'>
               Adebomi Close, Tipper Garage, Akala Expressway, Ibadan-Nigeria.
             </p>
           </div>
         </div>
       </div>
       <div className='w-full md:w-1/2 container px-5 mx-auto flex'>
-        <form className='lg:w-3/5 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 border-t-4 text-tblack font-roboto border-bgreen shadow-md'>
+        <form className='lg:w-4/5 xl:w-3/5 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 border-t-4 text-tblack font-roboto border-bgreen shadow-md'>
           <h2 className='text-lg mb-8 font-medium font-roboto'>
             Fill out the form
           </h2>

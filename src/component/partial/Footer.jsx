@@ -1,135 +1,184 @@
 import React from 'react'
+import { FaLinkedin, FaXTwitter } from 'react-icons/fa6'
+import { RiInstagramLine } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer className='text-white font-lora bg-primary'>
-      <div className='container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col'>
-        <div className='w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left'>
-          <Link
-            to='/'
-            className='flex title-font font-medium items-center md:justify-start justify-center text-gray-900'
-          >
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              stroke='currentColor'
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth='2'
-              className='w-10 h-10 text-white p-2 bg-indigo-500 rounded-full'
-              viewBox='0 0 24 24'
-            >
-              <path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'></path>
-            </svg>
-            <span className='ml-3 text-xl'>Tailblocks</span>
+    <footer className='w-full text-white font-lora border-t border-foo bg-primary bg-pattern bg-contain bg-no-repeat p-4 lg:p-0 lg:px-16 lg:py-24'>
+      <div className='w-full lg:mx-0 font-roboto flex md:items-center md:justify-between lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col'>
+        <div className='w-full px-auto md:px-0 md:w-80 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left'>
+          <Link to={'/'} className='flex items-center justify-center'>
+            <img src='./asset/logo-white.png' className='' alt='Zerta Logo' />
           </Link>
-          <p className='mt-2 text-sm text-gray-500'>
-            Air plant banjo lyft occupy retro adaptogen indego
+          <p className='mt-2 text-base text-white font-normal text-center font-lora'>
+            With us, you get the highest level of customer satisfaction, we have
+            a great workforce to deliver superior products and services to our
+            clients and the consumer market.
           </p>
         </div>
-        <div className='flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center'>
-          {[...Array(4)].map((_, index) => (
-            <div key={index} className='lg:w-1/4 md:w-1/2 w-full px-4'>
-              <h2 className='title-font font-medium text-gray-900 tracking-widest text-sm mb-3'>
-                CATEGORIES
-              </h2>
-              <nav className='list-none mb-10'>
-                <li>
-                  <Link to='/' className='text-gray-600 hover:text-gray-800'>
-                    First Link
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/' className='text-gray-600 hover:text-gray-800'>
-                    Second Link
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/' className='text-gray-600 hover:text-gray-800'>
-                    Third Link
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/' className='text-gray-600 hover:text-gray-800'>
-                    Fourth Link
-                  </Link>
-                </li>
-              </nav>
-            </div>
-          ))}
+
+        <div className='flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center md:justify-between lg:justify-center'>
+          <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
+            <h2 className='font-medium text-white tracking-widest  mb-3'>
+              Platform
+            </h2>
+            <nav className='list-none mb-10 space-y-6'>
+              <li>
+                <Link
+                  to='/'
+                  className='text-gray-400 hover:text-gray-200 font-normal'
+                >
+                  Solutions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to='/'
+                  className='text-gray-400 hover:text-gray-200 font-normal'
+                >
+                  Internship Program
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to='/'
+                  className='text-gray-400 hover:text-gray-200 font-normal'
+                >
+                  Worklife at Zerta
+                </Link>
+              </li>
+              <li className='flex items-center justify-center md:justify-start space-x-2'>
+                <Link
+                  to='/'
+                  className='text-gray-400 hover:text-gray-200 font-normal'
+                >
+                  Zerta Academy
+                </Link>
+                <Link className='bg-bgreen px-4 py-1 flex justify-center text-sm text-primary font-medium rounded-xl'>
+                  Apply now
+                </Link>
+              </li>
+            </nav>
+          </div>
+          <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
+            <h2 className='font-medium text-white tracking-widest  mb-3'>
+              Company
+            </h2>
+            <nav className='list-none mb-10 space-y-6'>
+              <li>
+                <Link
+                  to='/'
+                  className='text-gray-400 hover:text-gray-200 font-normal'
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to='/'
+                  className='text-gray-400 hover:text-gray-200 font-normal'
+                >
+                  Our mission
+                </Link>
+              </li>
+              <li className='flex items-center justify-center md:justify-start space-x-2'>
+                <Link
+                  to='/'
+                  className='text-gray-400 hover:text-gray-200 font-normal'
+                >
+                  Career
+                </Link>
+                <Link className='bg-bgreen px-4 py-1 flex justify-center text-sm text-primary font-medium rounded-xl'>
+                  Hiring
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to='/'
+                  className='text-gray-400 hover:text-gray-200 font-normal'
+                >
+                  Contact
+                </Link>
+              </li>
+            </nav>
+          </div>
+          <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
+            <h2 className='font-medium text-white tracking-widest  mb-3'>
+              Resources
+            </h2>
+            <nav className='list-none mb-10 space-y-6'>
+              <li>
+                <Link
+                  to='/'
+                  className='text-gray-400 hover:text-gray-200 font-normal'
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to='/'
+                  className='text-gray-400 hover:text-gray-200 font-normal'
+                >
+                  Support
+                </Link>
+              </li>
+            </nav>
+          </div>
+        </div>
+
+        <div className='md:w-1/3 lg:w-1/4 flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center'>
+          <div className='w-full px-4'>
+            <nav className='list-none mb-10 space-y-4'>
+              <div className=''>
+                <Link
+                  to='/'
+                  className='bg-soc rounded-full flex items-center space-x-4 p-1.5'
+                >
+                  <span className='bg-bgreen w-8 h-8 md:w-12 md:h-12 flex justify-center items-center rounded-full'>
+                    <FaXTwitter className='text-primary text-2xl md:text-3xl' />
+                  </span>
+                  <span className='text-white font-roboto font-medium'>
+                    Follow us on X
+                  </span>
+                </Link>
+              </div>
+              <div className=''>
+                <Link
+                  to='/'
+                  className='bg-soc rounded-full flex items-center space-x-4 p-1.5'
+                >
+                  <span className='bg-bgreen w-8 h-8 md:w-12 md:h-12 flex justify-center items-center rounded-full'>
+                    <RiInstagramLine className='text-primary text-2xl md:text-3xl' />
+                  </span>
+                  <span className='text-white font-roboto font-medium'>
+                    Follow us on Instagram
+                  </span>
+                </Link>
+              </div>
+              <div className=''>
+                <Link
+                  to='/'
+                  className='bg-soc rounded-full flex items-center space-x-4 p-1.5'
+                >
+                  <span className='bg-bgreen w-8 h-8 md:w-12 md:h-12 flex justify-center items-center rounded-full'>
+                    <FaLinkedin className='text-primary text-2xl md:text-3xl' />
+                  </span>
+                  <span className='text-white font-roboto font-medium'>
+                    Follow us on LinkedIn
+                  </span>
+                </Link>
+              </div>
+            </nav>
+          </div>
         </div>
       </div>
-      <div className='bg-gray-100'>
-        <div className='container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row'>
-          <p className='text-gray-500 text-sm text-center sm:text-left'>
-            © 2020 Tailblocks —
-            <a
-              href='https://twitter.com/knyttneve'
-              rel='noopener noreferrer'
-              className='text-gray-600 ml-1'
-              target='_blank'
-            >
-              @knyttneve
-            </a>
+      <div className='flex w-full md:justify-end mt-28'>
+        <div>
+          <p class='text-[#FFFFFFCC] text-sm text-center sm:text-left'>
+            © 2024 All Rights Reserved. Zerta Technolgy Ltd. RC 7332542.
           </p>
-          <span className='inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start'>
-            <Link to='/' className='text-gray-500'>
-              <svg
-                fill='currentColor'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                className='w-5 h-5'
-                viewBox='0 0 24 24'
-              >
-                <path d='M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z'></path>
-              </svg>
-            </Link>
-            <Link to='/' className='ml-3 text-gray-500'>
-              <svg
-                fill='currentColor'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                className='w-5 h-5'
-                viewBox='0 0 24 24'
-              >
-                <path d='M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z'></path>
-              </svg>
-            </Link>
-            <Link to='/' className='ml-3 text-gray-500'>
-              <svg
-                fill='none'
-                stroke='currentColor'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                className='w-5 h-5'
-                viewBox='0 0 24 24'
-              >
-                <rect width='20' height='20' x='2' y='2' rx='5' ry='5'></rect>
-                <path d='M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01'></path>
-              </svg>
-            </Link>
-            <Link to='/' className='ml-3 text-gray-500'>
-              <svg
-                fill='currentColor'
-                stroke='currentColor'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='0'
-                className='w-5 h-5'
-                viewBox='0 0 24 24'
-              >
-                <path
-                  stroke='none'
-                  d='M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z'
-                ></path>
-                <circle cx='4' cy='4' r='2' stroke='none'></circle>
-              </svg>
-            </Link>
-          </span>
         </div>
       </div>
     </footer>
