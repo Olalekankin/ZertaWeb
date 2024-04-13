@@ -4,9 +4,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#6247F1',
-        main: '#F7F7F7',
-        link: '#818181',
+        primary: '#150958',
+        link: '#022C22',
+        tblack: '#1D1F1E',
+        bgreen: '#8DC63F',
+        grey: '#646A69',
+        cream: '#150958',
+        bud: '#D9DEDD',
+      },
+      fontFamily: {
+        ribeye: ['Ribeye Marrow'],
+        roboto: ['Roboto'],
+        lora: ['Lora'],
+        aclon: ['Aclonica'],
+      },
+      backgroundImage: {
+        pattern: "url('/asset/pattern.png')",
+        pat: "url('/asset/pat.png')",
       },
     },
   },

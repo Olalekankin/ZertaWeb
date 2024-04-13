@@ -1,13 +1,26 @@
 import { Toaster } from 'react-hot-toast'
-import router from './Router'
-import { RouterProvider } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import Navbar from './component/partial/Navbar';
+import Footer from './component/partial/Footer';
+import { Home } from './pages';
+import NotFound from './pages/NotFound';
+import Contact from './pages/Contact';
 
 function App() {
   return (
-    <div className=''>
-      <RouterProvider router={router} />
+    <div>
+      <Toaster />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/home" element={<Navigate to="/" />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
     </div>
-  )
-}
+  );
+};
+
 
 export default App
