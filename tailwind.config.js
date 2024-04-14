@@ -9,7 +9,7 @@ export default {
         tblack: '#1D1F1E',
         bgreen: '#8DC63F',
         grey: '#646A69',
-        cream: '#150958',
+        cream: '#FFF7ED',
         bud: '#D9DEDD',
         foo: '#383b56',
         soc: '#4d4480',

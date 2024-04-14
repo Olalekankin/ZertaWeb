@@ -9,7 +9,11 @@ const Footer = () => {
       <div className='w-full lg:mx-0 font-roboto flex md:items-center md:justify-between lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col'>
         <div className='w-full px-auto md:px-0 md:w-80 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left'>
           <Link to={'/'} className='flex items-center justify-center'>
-            <img src='./asset/logo-white.png' className='' alt='Zerta Logo' />
+            <img
+              src='./asset/logo-white.png'
+              className='h-10 md:h-auto'
+              alt='Zerta Logo'
+            />
           </Link>
           <p className='mt-2 text-base text-white font-normal text-center font-lora'>
             With us, you get the highest level of customer satisfaction, we have
@@ -55,7 +59,7 @@ const Footer = () => {
                 >
                   Zerta Academy
                 </Link>
-                <Link className='bg-bgreen px-4 py-1 flex justify-center text-sm text-primary font-medium rounded-xl'>
+                <Link className='bg-bgreen px-2 py-1 flex justify-center text-sm text-primary font-medium rounded-xl'>
                   Apply now
                 </Link>
               </li>
@@ -82,15 +86,15 @@ const Footer = () => {
                   Our mission
                 </Link>
               </li>
-              <li className='flex items-center justify-center md:justify-start space-x-2'>
+              <li className=''>
                 <Link
-                  to='/'
-                  className='text-gray-400 hover:text-gray-200 font-normal'
+                  to={'/career'}
+                  className='text-gray-400 hover:text-gray-200 font-normal flex items-center justify-center md:justify-start space-x-2'
                 >
-                  Career
-                </Link>
-                <Link className='bg-bgreen px-4 py-1 flex justify-center text-sm text-primary font-medium rounded-xl'>
-                  Hiring
+                  <span>Career</span>
+                  <span className='bg-bgreen px-4 py-1 flex justify-center text-sm text-primary font-medium rounded-xl'>
+                    Hiring
+                  </span>
                 </Link>
               </li>
               <li>

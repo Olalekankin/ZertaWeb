@@ -1,81 +1,110 @@
 
+import { GoDotFill } from 'react-icons/go'
 import { Tabtitle } from '../component/utilis/PageTitle'
+import { useState } from 'react'
 
 
 const Home = () => {
   Tabtitle('Home | Zerta')
 
+   const [isOpen, setIsOpen] = useState(false)
+
+   const toggleAccordion = () => {
+     setIsOpen(!isOpen)
+   }
+
   return (
-    <div className='w-full bg-white '>
-      <section className='overflow-hidden'>
-        <div className='container px-5 py-24'>
-          <div className='lg:w-4/5 mx-auto flex flex-wrap'>
-            <div className='lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0'>
-              <h2 className='text-sm title-font text-gray-500 tracking-widest'>
-                BRAND NAME
-              </h2>
-              <h1 className='text-gray-900 text-3xl title-font font-medium mb-4'>
-                Animated Night Hill Illustrations
-              </h1>
-              <div className='flex mb-4'>
-                <a className='flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1'>
-                  Description
-                </a>
-                <a className='flex-grow border-b-2 border-gray-300 py-2 text-lg px-1'>
-                  Reviews
-                </a>
-                <a className='flex-grow border-b-2 border-gray-300 py-2 text-lg px-1'>
-                  Details
-                </a>
-              </div>
-              <p className='leading-relaxed mb-4'>
-                Fam locavore kickstarter distillery. Mixtape chillwave tumeric
-                sriracha taximy chia microdosing tilde DIY. XOXO fam inxigo
-                juiceramps cornhole raw denim forage brooklyn. Everyday carry +1
-                seitan poutine tumeric. Gastropub blue bottle austin listicle
-                pour-over, neutra jean.
+    <div className='w-full bg-white mt-28'>
+      <div className='w-full flex flex-col  lg:flex-row lg:flex-wrap'>
+        <div className='lg:h-full md:pt-10 p-4 md:p-0 md:py-5 lg:pt-28 md:px-12  lg:px-24 w-full lg:w-2/3'>
+          <div className='lg:w-2/3'>
+            <div className='flex items-center mb-10'>
+              <img src='./asset/icon.png' alt='' />
+              <p className='text-tblack font-roboto font-medium text-sm'>
+                …One solution at a time for your business
               </p>
-              <div className='flex border-t border-gray-200 py-2'>
-                <span className='text-gray-500'>Color</span>
-                <span className='ml-auto text-gray-900'>Blue</span>
-              </div>
-              <div className='flex border-t border-gray-200 py-2'>
-                <span className='text-gray-500'>Size</span>
-                <span className='ml-auto text-gray-900'>Medium</span>
-              </div>
-              <div className='flex border-t border-b mb-6 border-gray-200 py-2'>
-                <span className='text-gray-500'>Quantity</span>
-                <span className='ml-auto text-gray-900'>4</span>
-              </div>
-              <div className='flex'>
-                <span className='title-font font-medium text-2xl text-gray-900'>
-                  $58.00
-                </span>
-                <button className='flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded'>
-                  Button
-                </button>
-                <button className='rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4'>
-                  <svg
-                    fill='currentColor'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth='2'
-                    className='w-5 h-5'
-                    viewBox='0 0 24 24'
-                  >
-                    <path d='M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z'></path>
-                  </svg>
-                </button>
-              </div>
             </div>
+            <p className='text-4xl lg:text-7xl tracking-widest leading-8 lg:leading-[90px]  font-aclon'>
+              We Pride in <br className='hidden md:inline' /> Tech Solutions
+              <br className='hidden md:inline' />
+              that works.
+            </p>
+            <p className='mt-10 text-base md:text-xl'>
+              At Zerta, your business growth is our priority.{' '}
+              <br className='hidden md:inline' />
+              With our team of professionals and experts in tech,{' '}
+              <br className='hidden md:inline' /> we’ll help you craft
+              innovative business solutions that work.
+            </p>
+            <div className='mt-10 flex space-x-4 w-full md:w-auto'>
+              <a
+                href=''
+                className='bg-primary w-1/2 md:w-auto flex items-center justify-center text-white rounded-full py-3 md:py-4 px-6'
+              >
+                What we do
+              </a>
+              <a
+                href=''
+                className='border border-primary w-1/2 md:w-auto flex items-center justify-center text-primary rounded-full py-3 md:py-4 px-6'
+              >
+                Get in touch
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className='lg:h-ful mt-10 md:mt-0 lg:w-1/3 bg-bgreen flex justify-center items-center relative'>
+          <img src='./asset/hero.png' alt='' />
+        </div>
+      </div>
+      {/* Partner */}
+      <div className='border-y border-bud p-4 md:p-0 md:py-9 md:px-24 my-2'>
+        <div className='flex w-full flex-col lg:flex-row justify-between items-center lg:space-x-12'>
+          <div>
+            <p className='font-medium font-roboto text-tblack'>
+              Global partners that trusted us
+            </p>
+          </div>
+          <div className='flex-grow space-x-6 lg:space-x-0 mt-4 lg:mt-0 flex lg:justify-evenly lg:items-center'>
             <img
-              alt='ecommerce'
-              className='lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded'
-              src='https://dummyimage.com/400x400'
+              className='h-5 md:h-auto'
+              src='./asset/alt.png'
+              alt='altschool logo'
+            />
+            <img
+              className='h-5 md:h-auto'
+              src='./asset/actelis.png'
+              alt='actelis logo'
+            />
+            <img
+              className='h-5 md:h-auto'
+              src='./asset/kuda.png'
+              alt='kuda logo'
             />
           </div>
         </div>
-      </section>
+      </div>
+      <div className='p-4 md:p-0 md:px-12 md:py-8 lg:px-24 lg:py-16 bg-cream'>
+        <div className='flex items-center space-x-2'>
+          <GoDotFill className='text-bgreen text-xl' />
+          <p className='text-primary font-medium font-roboto text-sm'>
+            What we do
+          </p>
+        </div>
+        <div className='mt-8 lg:mt-14'>
+          <div>
+            <p className=''>
+              We help small and global brands change the narrative for the
+              better with our expertise
+            </p>
+          </div>
+          <div className='accordion'>
+            <div className='accordion-header' onClick={toggleAccordion}>
+              <div className={`cursor-pointer ${isOpen ? 'open' : ''}`}>Hello</div>
+            </div>
+            {isOpen && <div className='accordion-content'>Sup</div>}
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
