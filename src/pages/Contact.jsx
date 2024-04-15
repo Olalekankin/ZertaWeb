@@ -1,8 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa'
 import { MdOutlineCall, MdOutlineEmail, MdOutlineLocationOn } from 'react-icons/md'
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    reason: '',
+    message: ''
+  });
+
+  const [response, setResponse] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch('/backend/contact.php', {
+    // const response = await fetch('/backend/response.json', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    const data = await response.json();
+
+    console.log(data);
+
+    if (response.ok) {
+      setResponse(data.message);
+    } else {
+      setResponse('Failed to send message');
+    }
+  };
+
   return (
     <section className='bg-pat bg-cover bg-no-repeat p-4 md:p-0 md:px-12 lg:px-24 md:py-8 lg:py-24 w-full flex flex-col md:flex-row bg-bud mt-28'>
       <div className='text-primary font-roboto px-5 w-full md:w-1/2'>
@@ -33,11 +69,11 @@ const Contact = () => {
         </div>
       </div>
       <div className='w-full md:w-1/2 container px-5 mx-auto flex'>
-        <form className='lg:w-4/5 xl:w-3/5 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 border-t-4 text-tblack font-roboto border-bgreen shadow-md'>
+        <form onSubmit={handleSubmit} className='lg:w-4/5 xl:w-3/5 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 border-t-4 text-tblack font-roboto border-bgreen shadow-md'>
           <h2 className='text-lg mb-8 font-medium font-roboto'>
             Fill out the form
           </h2>
-
+          <p className='text-white bg-bgreen flex items-center space-x-2 border-0 py-2 px-6 focus:outline-none hover:bg-green-500 rounded-full justify-center text-lg'>{response}</p> <br></br>
           <div className='relative mb-6'>
             <label htmlFor='full name' className='leading-7 text-tblack'>
               Full name
@@ -45,6 +81,7 @@ const Contact = () => {
             <input
               type='text'
               id='fullName'
+              value={formData.fullName} onChange={handleChange}
               name='fullName'
               className='w-full bg-white rounded-full border border-bud focus:border-primary focus:ring-2 focus:ring-primary text-base outline-none text-primary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
             />
@@ -56,6 +93,7 @@ const Contact = () => {
             <input
               type='email'
               id='email'
+              value={formData.email} onChange={handleChange}
               name='email'
               className='w-full bg-white rounded-full border border-bud focus:border-primary focus:ring-2 focus:ring-primary text-base outline-none text-primary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
             />
@@ -66,12 +104,14 @@ const Contact = () => {
             </label>
             <select
               id='reason'
+              value={formData.reason} onChange={handleChange}
               name='reason'
               className='w-full bg-white rounded-full border border-bud focus:border-primary focus:ring-2 focus:ring-primary text-base outline-none text-primary py-2.5 px-3 leading-8 transition-colors duration-200 ease-in-out'
             >
               <option selected value='reason'>
                 Reason
               </option>
+              <option value='recuitment'>Recuitment</option>
             </select>
           </div>
           <div className='relative mb-6'>
@@ -80,11 +120,12 @@ const Contact = () => {
             </label>
             <textarea
               id='message'
+              value={formData.message} onChange={handleChange}
               name='message'
               className='w-full bg-white rounded-full border border-bud focus:border-primary focus:ring-2 focus:ring-primary text-base outline-none text-primary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
             ></textarea>
           </div>
-          <button className='text-white bg-bgreen flex items-center space-x-2 border-0 py-2 px-6 focus:outline-none hover:bg-green-500 rounded-full justify-center text-lg'>
+          <button type="submit" className='text-white bg-bgreen flex items-center space-x-2 border-0 py-2 px-6 focus:outline-none hover:bg-green-500 rounded-full justify-center text-lg'>
             <span>Submit</span>
             <FaArrowRight />
           </button>
