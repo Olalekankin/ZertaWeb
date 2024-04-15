@@ -118,7 +118,7 @@ const Home = () => {
                 onClick={() => toggleAccordion(0)}
               >
                 <div
-                  className={`cursor-pointer text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-5xl relative ${
                     openAccordion === 0 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -148,7 +148,7 @@ const Home = () => {
                 onClick={() => toggleAccordion(1)}
               >
                 <div
-                  className={`cursor-pointer text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-5xl relative ${
                     openAccordion === 1 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -178,7 +178,7 @@ const Home = () => {
                 onClick={() => toggleAccordion(2)}
               >
                 <div
-                  className={`cursor-pointer text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-5xl relative ${
                     openAccordion === 2 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -208,7 +208,7 @@ const Home = () => {
                 onClick={() => toggleAccordion(3)}
               >
                 <div
-                  className={`cursor-pointer text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-5xl relative ${
                     openAccordion === 3 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -237,7 +237,7 @@ const Home = () => {
                 onClick={() => toggleAccordion(4)}
               >
                 <div
-                  className={`cursor-pointer text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-5xl relative ${
                     openAccordion === 4 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -267,7 +267,7 @@ const Home = () => {
                 onClick={() => toggleAccordion(5)}
               >
                 <div
-                  className={`cursor-pointer text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-5xl relative ${
                     openAccordion === 5 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -360,7 +360,7 @@ const Home = () => {
       <div className='w-full p-4 md:p-0 md:px-12 md:py-8 lg:px-24  bg-primary'>
         <div className='flex space-x-3'>
           <div className='flex-grow'>
-            <h2 className='text-base lg:text-5xl text-white font-aclon leading-[68px]'>
+            <h2 className='text-base lg:text-5xl text-white font-aclon leading-normal lg:leading-[68px]'>
               10x your Business results with {' '}
               <br className='hidden lg:inline' /> the Digital Services we offer{' '}
               <br className='hidden lg:inline' /> at Zerta
@@ -385,16 +385,14 @@ const Home = () => {
       <div className='w-full p-4 md:p-0 md:px-12 md:py-8 lg:px-24 lg:py-16 bg-cream'>
         <div className='flex items-center justify-between'>
           <h1 className='text-tblack text-4xl lg:text-6xl'>Our Products</h1>
-          <Link className='flex items-center space-x-2 border border-bud rounded-full py-3 px-4'>
+          <Link className='flex items-center space-x-2 text-tblack border border-tblack rounded-full py-3 px-4'>
             <span>See all</span>
-            <FaArrowRight />
+            <FaArrowRight className='text-tblack' />
           </Link>
         </div>
-        <div className='mt-9 flex space-x-3'>
+        <div className='mt-9 lg:flex lg:space-x-3'>
           <div className='accordion w-full lg:w-1/3'>
-            <div
-              className='accordion-header'
-            >
+            <div className='accordion-header'>
               <div className='relative'>
                 <p className='border-b-2 border-bud text-base lg:text-5xl py-3 after:absolute after:w-64 after:border-b-2 after:border-primary after:bottom-0 after:left-0'>
                   Beema by Zerta
@@ -408,9 +406,124 @@ const Home = () => {
               qualified leads and drive conversion.
             </div>
           </div>
-          <div>
-            <img src="./asset/beema.png" alt="" />
+          <div className='w-full lg:w-2/3'>
+            <img src='./asset/beema.png' alt='' />
           </div>
+        </div>
+      </div>
+      <div className='w-full p-4 md:p-0 md:px-12 md:py-8 lg:px-24 lg:py-16 bg-primary'>
+        <div className='flex items-center space-x-2 pb-5 border-b border-bud w-full'>
+          <GoDotFill className='text-bgreen text-xl' />
+          <p className='text-white font-medium font-roboto text-sm '>
+            Testimonials
+          </p>
+        </div>
+        <div className='mt-8 lg:mt-14'>
+          <h1 className='text-4xl lg:text-6xl text-white font-roboto'>
+            What our customers say
+          </h1>
+        </div>
+        <div className='mt-12 lg:mt-20 lg:overflow-x-hidden'>
+          <div className=' block lg:flex lg:flex-nowrap lg:overflow-x-visible space-y-5 lg:space-y-0 lg:space-x-8'>
+            <div className='bg-bgreen p-6 lg:p-10 rounded-lg lg:w-[350px] lg:h-[320px]'>
+              <p className='text-primary text-lg lg:text-xl'>
+                “Zerta transformed my Product use. Efficient, apt tech,
+                outstanding service!”
+              </p>
+              <div className='flex space-x-3 items-center mt-8 lg:mt-10'>
+                <div>
+                  <img src='./asset/joy.png' alt='' />
+                </div>
+                <div className=''>
+                  <p className='text-primary text-lg lg:text-xl font-medium'>
+                    Joy O.
+                  </p>
+                  <p className='text-primary text-base lg:text-lg'>
+                    OAJ Global services
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='bg-bgreen p-6 lg:p-10 rounded-lg lg:w-[350px] lg:h-[320px]'>
+              <p className='text-primary text-lg lg:text-xl'>
+                “Zerta redefined my brand game – speed, efficient, and top-notch
+                service!”
+              </p>
+              <div className='flex space-x-3 items-center mt-8 lg:mt-10'>
+                <div>
+                  <img src='./asset/tolu.png' alt='' />
+                </div>
+                <div className='mb-1'>
+                  <p className='text-primary text-lg lg:text-xl font-medium'>
+                    Tolulope S.
+                  </p>
+                  <p className='text-primary text-base lg:text-lg'>
+                    CEO, Creative Visuals
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='bg-bgreen p-6 lg:p-10 rounded-lg lg:w-[350px] lg:h-[320px]'>
+              <p className='text-primary text-lg lg:text-xl'>
+                “Thanks to Zerta, my office is now AI-powered with smart tools –
+                sustainable, efficient, and exceptional service.”
+              </p>
+              <div className='flex space-x-3 items-center mt-8 lg:mt-10'>
+                <div>
+                  <img src='./asset/cody.png' alt='' />
+                </div>
+                <div className=''>
+                  <p className='text-primary text-lg lg:text-xl font-medium'>
+                    Cody T.
+                  </p>
+                  <p className='text-primary text-base lg:text-lg'>
+                    Oasis Global
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='bg-bgreen p-6 lg:p-10 rounded-lg lg:w-[350px] lg:h-[320px]'>
+              <p className='text-primary text-lg lg:text-xl'>
+                “Zerta transformed my office. Efficient, apt tech, outstanding
+                service!”
+              </p>
+              <div className='flex space-x-3 items-center mt-8 lg:mt-10'>
+                <div>
+                  <img src='./asset/georgina.png' alt='' />
+                </div>
+                <div className=''>
+                  <p className='text-primary text-lg lg:text-xl font-medium'>
+                    Georgina W.
+                  </p>
+                  <p className='text-primary text-base lg:text-lg'>
+                    Trend Nest
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='w-full p-4 md:p-0 md:px-12 md:py-8 lg:px-24 lg:py-16 bg-cream'>
+        <div className='w-full block space-y-5 lg:space-y-0 lg:flex '>
+          <div className='w-full lg:w-1/2'>
+            <h2 className='text-grey font-light font-roboto text-2xl lg:text-5xl'>
+              Stay in the loop with our Tech Horizon newsletter
+            </h2>
+          </div>
+          <form className='w-full lg:w-1/2 flex items-center lg:justify-end space-x-4'>
+            <input
+              type='email'
+              placeholder='Your e-mail...'
+              className='px-5 py-2 lg:py-4 rounded-full border border-grey lg:w-1/2'
+            />
+            <button
+              type='submit'
+              className='bg-bgreen text-white px-5 py-2 lg:py-4 rounded-full font-medium text-base lg:text-lg lg:w-1/4'
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
     </div>
