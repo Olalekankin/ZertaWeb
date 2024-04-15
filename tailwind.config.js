@@ -13,6 +13,7 @@ export default {
         bud: '#D9DEDD',
         foo: '#383b56',
         soc: '#4d4480',
+        ina: '#929C9A',
       },
       fontFamily: {
         ribeye: ['Ribeye Marrow'],
