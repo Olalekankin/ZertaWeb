@@ -62,8 +62,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className='lg:h-ful mt-10 md:mt-0 lg:w-1/3 bg-bgreen flex justify-center items-center relative'>
-          <img src='./asset/hero.png' alt='' />
+        <div className='lg:h-ful mt-10 md:mt-0 lg:w-1/3 bg-bgreen flex justify-center items-center '>
+          <div className='relative rounded-full border-red-400'>
+            <img src='./asset/hero.png' alt='' />
+            <img src='./asset/motion.png' alt='' className='hidden lg:inline absolute -left-40 top-1/2 -translate-y-1/2 '/>
+          </div>
         </div>
       </div>
       {/* Partner */}
@@ -93,7 +96,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className='p-4 md:p-0 md:px-12 md:py-8 lg:px-24 lg:py-16 bg-cream'>
+      {/* Services */}
+      <div
+        id='service'
+        className='p-4 md:p-0 md:px-12 md:py-8 lg:px-24 lg:py-16 bg-cream'
+      >
         <div>
           <div className='inline-flex items-center border-b py-3 border-bud space-x-2'>
             <GoDotFill className='text-bgreen text-xl' />
@@ -295,7 +302,10 @@ const Home = () => {
         </div>
       </div>
       {/* About US */}
-      <div className='w-full p-4 md:p-0 md:px-12 md:py-8 lg:px-24 lg:py-16 bg-white'>
+      <div
+        id='about'
+        className='w-full p-4 md:p-0 md:px-12 md:py-8 lg:px-24 lg:py-16 bg-white'
+      >
         <div className='w-full lg:flex lg:justify-between'>
           <div className='w-full lg:w-2/5'>
             <h1 className='text-4xl lg:text-6xl text-tblack font-roboto'>
@@ -382,7 +392,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className='w-full p-4 md:p-0 md:px-12 md:py-8 lg:px-24 lg:py-16 bg-cream'>
+      {/* Product */}
+      <div
+        id='product'
+        className='w-full p-4 md:p-0 md:px-12 md:py-8 lg:px-24 lg:py-16 bg-cream'
+      >
         <div className='flex items-center justify-between'>
           <h1 className='text-tblack text-4xl lg:text-6xl'>Our Products</h1>
           <Link className='flex items-center space-x-2 text-tblack border border-tblack rounded-full py-3 px-4'>

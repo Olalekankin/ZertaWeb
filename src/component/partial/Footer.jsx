@@ -136,8 +136,9 @@ const Footer = () => {
           <div className='w-full px-4'>
             <nav className='list-none mb-10 space-y-4'>
               <div className=''>
-                <Link
-                  to='/'
+                <a
+                  href='https://x.com/zertahq?s=21'
+                  target='_blank'
                   className='bg-soc rounded-full flex items-center space-x-4 p-1.5'
                 >
                   <span className='bg-bgreen w-8 h-8 md:w-12 md:h-12 flex justify-center items-center rounded-full'>
@@ -146,11 +147,12 @@ const Footer = () => {
                   <span className='text-white font-roboto font-medium'>
                     Follow us on X
                   </span>
-                </Link>
+                </a>
               </div>
               <div className=''>
-                <Link
-                  to='/'
+                <a
+                  href='https://www.instagram.com/zertahq?igsh=MXAxNzJ4dnJiNjMwcA=='
+                  target='_blank'
                   className='bg-soc rounded-full flex items-center space-x-4 p-1.5'
                 >
                   <span className='bg-bgreen w-8 h-8 md:w-12 md:h-12 flex justify-center items-center rounded-full'>
@@ -159,11 +161,12 @@ const Footer = () => {
                   <span className='text-white font-roboto font-medium'>
                     Follow us on Instagram
                   </span>
-                </Link>
+                </a>
               </div>
               <div className=''>
-                <Link
-                  to='/'
+                <a
+                  href='https://www.linkedin.com/company/zertatechnology/'
+                  target='_blank'
                   className='bg-soc rounded-full flex items-center space-x-4 p-1.5'
                 >
                   <span className='bg-bgreen w-8 h-8 md:w-12 md:h-12 flex justify-center items-center rounded-full'>
@@ -172,7 +175,7 @@ const Footer = () => {
                   <span className='text-white font-roboto font-medium'>
                     Follow us on LinkedIn
                   </span>
-                </Link>
+                </a>
               </div>
             </nav>
           </div>

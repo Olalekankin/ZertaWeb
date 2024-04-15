@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaArrowRight } from 'react-icons/fa'
 import { HiMenu } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
@@ -9,6 +9,34 @@ const Navbar = () => {
  const handleNavbar = () => {
    setIsOpen((prevIsOpen) => !prevIsOpen) 
  }
+
+   useEffect(() => {
+     const handleSmoothScroll = (e) => {
+       e.preventDefault()
+       const targetId = e.target.getAttribute('href').substring(1)
+       const targetElement = document.getElementById(targetId)
+       if (targetElement) {
+         targetElement.scrollIntoView({
+           behavior: 'smooth',
+           block: 'start', 
+           inline: 'start', 
+           offset: '-120px', 
+         })
+       }
+     }
+
+     const links = document.querySelectorAll('a[href^="#"]')
+     links.forEach((link) => {
+       link.addEventListener('click', handleSmoothScroll)
+     })
+
+     return () => {
+       // Cleanup: remove event listeners when component unmounts
+       links.forEach((link) => {
+         link.removeEventListener('click', handleSmoothScroll)
+       })
+     }
+   }, [])
 
   return (
     <nav className='bg-white border-b border-bud fixed w-full z-20 top-0 start-0'>
