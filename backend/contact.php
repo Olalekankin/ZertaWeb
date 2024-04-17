@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             //Recipients
             $mail->setFrom("'$email'", "'$fullName'");
-            $mail->addAddress('mail@harkone.com.ng', 'Admin ZertaWeb');     // Add a recipient
+            $mail->addAddress('zertahq@gmail.com', 'Admin ZertaWeb');     // Add a recipient
 
             //Content
             $mail->isHTML(true);                                  // Set email format to HTML
