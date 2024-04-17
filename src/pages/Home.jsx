@@ -65,7 +65,11 @@ const Home = () => {
         <div className='lg:h-ful mt-10 md:mt-0 lg:w-1/3 bg-bgreen flex justify-center items-center '>
           <div className='relative rounded-full border-red-400'>
             <img src='./asset/hero.png' alt='' />
-            <img src='./asset/motion.png' alt='' className='hidden lg:inline absolute -left-40 top-1/2 -translate-y-1/2 '/>
+            <img
+              src='./asset/motion.png'
+              alt=''
+              className='hidden lg:inline absolute -left-40 top-1/2 -translate-y-1/2 '
+            />
           </div>
         </div>
       </div>
@@ -125,7 +129,7 @@ const Home = () => {
                 onClick={() => toggleAccordion(0)}
               >
                 <div
-                  className={`cursor-pointer text-2xl lg:text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-3xl xl:text-5xl relative ${
                     openAccordion === 0 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -155,7 +159,7 @@ const Home = () => {
                 onClick={() => toggleAccordion(1)}
               >
                 <div
-                  className={`cursor-pointer text-2xl lg:text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-3xl xl:text-5xl relative ${
                     openAccordion === 1 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -185,7 +189,7 @@ const Home = () => {
                 onClick={() => toggleAccordion(2)}
               >
                 <div
-                  className={`cursor-pointer text-2xl lg:text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-3xl xl:text-5xl  relative ${
                     openAccordion === 2 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -215,7 +219,7 @@ const Home = () => {
                 onClick={() => toggleAccordion(3)}
               >
                 <div
-                  className={`cursor-pointer text-2xl lg:text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-3xl xl:text-5xl relative ${
                     openAccordion === 3 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -244,7 +248,7 @@ const Home = () => {
                 onClick={() => toggleAccordion(4)}
               >
                 <div
-                  className={`cursor-pointer text-2xl lg:text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-3xl xl:text-5xl  relative ${
                     openAccordion === 4 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -268,13 +272,10 @@ const Home = () => {
                 </div>
               )}
             </div>
-            <div className='accordion w-full lg:w-1/3'>
-              <div
-                className='accordion-header'
-                onClick={() => toggleAccordion(5)}
-              >
+            <div className='w-full lg:w-1/3'>
+              <div className='' onClick={() => toggleAccordion(5)}>
                 <div
-                  className={`cursor-pointer text-2xl lg:text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-3xl xl:text-5xl  relative ${
                     openAccordion === 5 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -290,7 +291,7 @@ const Home = () => {
                 </div>
               </div>
               {openAccordion === 5 && (
-                <div className='text-base lg:text-lg mt-4 text-primary w-full'>
+                <div className='text-base lg:text-lg mt-4 text-primary'>
                   Your business needs an online presence to thrive and flourish
                   the way you want, at Zerta we’ll help create and manage your
                   brand’s online presence across different social media
@@ -315,13 +316,12 @@ const Home = () => {
           <div className='w-full lg:w-3/5 lg:flex lg:justify-end'>
             <div>
               <p className='text-base lg:text-2xl'>
-                At Zerta, we're more than just a software development company
-                we're your digital partners, dedicated to bringing your vision
+                At Zerta, we're more than just a Software development company
+                we're your Digital Partners, dedicated to bringing your vision
                 to life with innovative solutions tailored to your needs.
-                Founded on the principles of creativity, reliability, and
-                excellence, we're committed to empowering businesses to thrive
-                in the digital landscape. Whether you're embarking on a new
-                project or seeking to enhance
+                Founded on the principles of Creativity, Reliability, and
+                Excellence, we're committed to empowering businesses to thrive
+                in the digital landscape.
               </p>
               <p
                 className={`text-base lg:text-2xl mt-5 ${
@@ -330,12 +330,13 @@ const Home = () => {
                     : 'max-h-0 overflow-hidden'
                 }`}
               >
-                Whether you're embarking on a new project or seeking to enhance{' '}
+                Whether you're embarking on a new project or seeking to enhance
                 {isOpen && (
                   <span className=''>
-                    your digital presence, Zerta is here to accompany you every
+                    your digital presence, Zerta is here to accompany your every
                     step of the way and get you the results you need. Let's
-                    innovate, create, and elevate together.
+                    innovate, create, and elevate together! Welcome to Zerta –
+                    where we create one solution at a time for your business.{' '}
                   </span>
                 )}
               </p>
@@ -360,7 +361,7 @@ const Home = () => {
                     isOpen ? 'mt-10' : 'mt-0'
                   }`}
                 >
-                  Read more
+                  {isOpen ? 'Read less' : 'Read more'}
                 </button>
               </div>
             </div>
@@ -380,11 +381,12 @@ const Home = () => {
               <br className='hidden lg:inline' /> business with our solutions.
             </p>
             <div className='mt-10'>
-              <button
+              <a
+                href='https://wa.link/1poevk'
                 className={`bg-bgreen text-primary lg:py-4 lg:px-6 px-4 py-2 rounded-full `}
               >
                 Get in touch
-              </button>
+              </a>
             </div>
           </div>
           <div className=''>
@@ -414,10 +416,11 @@ const Home = () => {
               </div>
             </div>
             <div className='text-base lg:text-lg mt-4 text-primary w-full'>
-              Your business needs an online presence to thrive and flourish the
-              way you want, at Zerta we’ll help create and manage your brand’s
-              online presence across different social media platforms to attract
-              qualified leads and drive conversion.
+              Beema is a time-tracking app that makes clocking in and out
+              effortless by automatically clocking you in when you are within
+              your office/workplace circumference, without having to do so
+              manually. With just a click, you can... Know who’s in, off, or on
+              a break...
             </div>
           </div>
           <div className='w-full lg:w-2/3'>
@@ -521,7 +524,7 @@ const Home = () => {
       <div className='w-full p-4 md:p-0 md:px-12 md:py-8 lg:px-24 lg:py-16 bg-cream'>
         <div className='w-full block space-y-5 lg:space-y-0 lg:flex '>
           <div className='w-full lg:w-1/2'>
-            <h2 className='text-grey font-light font-roboto text-2xl lg:text-5xl'>
+            <h2 className='text-grey font-light font-roboto text-2xl lg:text-3xl xl:text-5xl'>
               Stay in the loop with our Tech Horizon newsletter
             </h2>
           </div>
@@ -529,11 +532,11 @@ const Home = () => {
             <input
               type='email'
               placeholder='Your e-mail...'
-              className='px-5 py-2 lg:py-4 rounded-full border border-grey lg:w-1/2'
+              className='px-5 py-2 lg:py-4 rounded-full border border-grey w-2/3 lg:w-1/2'
             />
             <button
               type='submit'
-              className='bg-bgreen text-white px-5 py-2 lg:py-4 rounded-full font-medium text-base lg:text-lg lg:w-1/4'
+              className='bg-bgreen text-white px-5 py-2 lg:py-4 rounded-full font-medium text-base w-1/3 lg:text-lg lg:w-1/4'
             >
               Subscribe
             </button>

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa'
 import { MdOutlineCall, MdOutlineEmail, MdOutlineLocationOn } from 'react-icons/md'
+import { Tabtitle } from '../component/utilis/PageTitle';
 
 const Contact = () => {
+  Tabtitle('Contact | Zerta')
+
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -40,8 +43,8 @@ const Contact = () => {
   };
 
   return (
-    <section className='bg-pat bg-cover bg-no-repeat p-4 md:p-0 md:px-12 lg:px-24 md:py-8 lg:py-24 w-full flex flex-col md:flex-row bg-bud mt-28'>
-      <div className='text-primary font-roboto px-5 w-full md:w-1/2'>
+    <section className='bg-pat bg-cover bg-no-repeat p-4 md:p-0 md:px-12 lg:px-24 md:py-8 lg:py-24 w-full flex flex-col md:flex-row bg-cream mt-28'>
+      <div className='text-primary font-roboto lg:px-5 w-full md:w-1/2'>
         <h1 className='text-2xl md:text-6xl'>Contact Us</h1>
         <p className='text-base md:text-lg font-medium mt-6'>
           We are here to help you make a your world better, one product at a
@@ -68,7 +71,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className='w-full md:w-1/2 container px-5 mx-auto flex'>
+      <div className='w-full md:w-1/2 container lg:px-5 mx-auto flex'>
         <form onSubmit={handleSubmit} className='lg:w-4/5 xl:w-3/5 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 border-t-4 text-tblack font-roboto border-bgreen shadow-md'>
           <h2 className='text-lg mb-8 font-medium font-roboto'>
             Fill out the form

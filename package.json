@@ -2,7 +2,7 @@
   "name": "zertaweb",
   "private": true,
   "version": "0.0.0",
-  "homepage": "./",
+  "homepage": "https://zerta.ng",
   "type": "module",
   "scripts": {
     "dev": "vite",

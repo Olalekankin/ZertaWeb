@@ -43,17 +43,23 @@ const Navbar = () => {
       <div className='w-full flex flex-wrap items-center justify-between mx-auto lg:mx-0 p-4 lg:p-0 lg:px-16 lg:py-8 font-roboto font-medium text-link'>
         {/* brand logo */}
         <Link to={'/'} className='flex items-center'>
-          <img src='./asset/logo.svg' className='h-6 md:h-auto' alt='Zerta Logo' />
+          <img
+            src='./asset/logo.svg'
+            className='h-6 md:h-auto'
+            alt='Zerta Logo'
+          />
         </Link>
         {/* Mobile Nav button */}
         <div className='flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse'>
-          <Link
+          <a
+            href='https://wa.link/1poevk'
+            target='_blank'
             to={'/contat-us'}
-            className='text-link border border-link   focus:ring-primary text-sm md:text-base  md:font-medium rounded-full flex px-4 py-2  md:py-3 items-center space-x-2'
+            className='text-link border border-link focus:ring-primary text-sm md:text-base  md:font-medium rounded-full flex px-4 py-2  md:py-3 items-center space-x-2'
           >
             <span>Get in touch</span>
             <FaArrowRight />
-          </Link>
+          </a>
           <button
             onClick={handleNavbar}
             type='button'
