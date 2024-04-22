@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         //Recipients
         $mail->setFrom("'$email'", "'$fullName'");
-        $mail->addAddress('mail@harkone.com.ng', 'Admin ZertaWeb');     // Add a recipient
+        $mail->addAddress('zertahq@gmail.com', 'Admin ZertaWeb');     // Add a recipient
 
         //Attachments
         $mail->addAttachment($_FILES['cv']['tmp_name'], $_FILES['cv']['name']);    // Optional name
