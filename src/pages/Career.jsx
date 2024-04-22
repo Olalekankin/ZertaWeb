@@ -13,7 +13,7 @@ const Career = () => {
 
  Tabtitle('Career | Zerta')
   return (
-    <div className='p-4 mt-28 md:p-0 md:px-12 md:py-8 lg:px-24 lg:py-16 bg-cream'>
+    <div className='p-4 mt-20 lg:mt-28 md:p-0 md:px-12 md:py-8 lg:px-24 lg:py-16 bg-cream'>
       <div className='flex items-center space-x-2 pb-5 border-b border-bud w-full'>
         <GoDotFill className='text-bgreen text-xl' />
         <p className='text-primary font-medium font-roboto text-sm '>Career</p>

@@ -4,6 +4,7 @@ import { Tabtitle } from '../component/utilis/PageTitle'
 import { useState } from 'react'
 import { FaArrowRight } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
+import { HashLink as Hash } from 'react-router-hash-link'
 
 
 const Home = () => {
@@ -23,18 +24,24 @@ const Home = () => {
     setIsOpen(!isOpen)
   }
 
+  const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.scrollY
+    const yOffset = -114
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' })
+  }
+
   return (
-    <div className='w-full bg-white mt-28'>
+    <div id='home' className='w-full bg-white mt-28'>
       <div className='w-full flex flex-col  lg:flex-row lg:flex-wrap'>
         <div className='lg:h-full md:pt-10 p-4 md:p-0 md:py-5 lg:pt-28 md:px-12  lg:px-24 w-full lg:w-2/3'>
-          <div className='lg:w-2/3'>
+          <div className='w-full lg:w-5/6 '>
             <div className='flex items-center mb-10'>
               <img src='./asset/icon.png' alt='' />
               <p className='text-tblack font-roboto font-medium text-sm'>
                 …One solution at a time for your business
               </p>
             </div>
-            <p className='text-4xl lg:text-7xl tracking-widest leading-8 lg:leading-[90px]  font-aclon'>
+            <p className='text-3xl lg:text-5xl 2xl:text-7xl tracking-widest leading-10 lg:leading-[70px] 2xl:leading-[90px]  font-aclon'>
               We Pride in <br className='hidden md:inline' /> Tech Solutions
               <br className='hidden md:inline' />
               that works.
@@ -47,14 +54,17 @@ const Home = () => {
               innovative business solutions that work.
             </p>
             <div className='mt-10 flex space-x-4 w-full md:w-auto'>
-              <a
-                href=''
+              <Hash
+                to='#service'
+                smooth
+                scroll={(el) => scrollWithOffset(el)}
+                
                 className='bg-primary w-1/2 md:w-auto flex items-center justify-center text-white rounded-full py-3 md:py-4 px-6'
               >
                 What we do
-              </a>
+              </Hash>
               <a
-                href=''
+                href='https://wa.link/1poevk'
                 className='border border-primary w-1/2 md:w-auto flex items-center justify-center text-primary rounded-full py-3 md:py-4 px-6'
               >
                 Get in touch
@@ -63,7 +73,7 @@ const Home = () => {
           </div>
         </div>
         <div className='lg:h-ful mt-10 md:mt-0 lg:w-1/3 bg-bgreen flex justify-center items-center '>
-          <div className='relative rounded-full border-red-400'>
+          <div className='relative rounded-full'>
             <img src='./asset/hero.png' alt='' />
             <img
               src='./asset/motion.png'
@@ -123,13 +133,13 @@ const Home = () => {
           </div>
           {/* Accordions */}
           <div className='w-full mt-10 space-y-8'>
-            <div className='accordion w-full lg:w-1/3'>
+            <div className='accordion w-full lg:w-3/5'>
               <div
                 className='accordion-header'
                 onClick={() => toggleAccordion(0)}
               >
                 <div
-                  className={`cursor-pointer text-2xl lg:text-3xl xl:text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-3xl  2xl:text-5xl relative ${
                     openAccordion === 0 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -153,13 +163,13 @@ const Home = () => {
                 </div>
               )}
             </div>
-            <div className='accordion w-full lg:w-1/3'>
+            <div className='accordion w-full lg:w-3/5'>
               <div
                 className='accordion-header'
                 onClick={() => toggleAccordion(1)}
               >
                 <div
-                  className={`cursor-pointer text-2xl lg:text-3xl xl:text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-4xl  2xl:text-5xl relative ${
                     openAccordion === 1 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -183,13 +193,13 @@ const Home = () => {
                 </div>
               )}
             </div>
-            <div className='accordion w-full lg:w-1/3'>
+            <div className='accordion w-full lg:w-3/5'>
               <div
                 className='accordion-header'
                 onClick={() => toggleAccordion(2)}
               >
                 <div
-                  className={`cursor-pointer text-2xl lg:text-3xl xl:text-5xl  relative ${
+                  className={`cursor-pointer text-2xl lg:text-4xl  2xl:text-5xl  relative ${
                     openAccordion === 2 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -213,13 +223,13 @@ const Home = () => {
                 </div>
               )}
             </div>
-            <div className='accordion w-full lg:w-1/3'>
+            <div className='accordion w-full lg:w-3/5'>
               <div
                 className='accordion-header'
                 onClick={() => toggleAccordion(3)}
               >
                 <div
-                  className={`cursor-pointer text-2xl lg:text-3xl xl:text-5xl relative ${
+                  className={`cursor-pointer text-2xl lg:text-4xl  2xl:text-5xl relative ${
                     openAccordion === 3 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -242,13 +252,13 @@ const Home = () => {
                 </div>
               )}
             </div>
-            <div className='accordion w-full lg:w-1/3'>
+            <div className='accordion w-full lg:w-3/5'>
               <div
                 className='accordion-header'
                 onClick={() => toggleAccordion(4)}
               >
                 <div
-                  className={`cursor-pointer text-2xl lg:text-3xl xl:text-5xl  relative ${
+                  className={`cursor-pointer text-2xl lg:text-4xl  2xl:text-5xl  relative ${
                     openAccordion === 4 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -272,10 +282,10 @@ const Home = () => {
                 </div>
               )}
             </div>
-            <div className='w-full lg:w-1/3'>
+            <div className='w-full lg:w-3/5'>
               <div className='' onClick={() => toggleAccordion(5)}>
                 <div
-                  className={`cursor-pointer text-2xl lg:text-3xl xl:text-5xl  relative ${
+                  className={`cursor-pointer text-2xl lg:text-4xl  2xl:text-5xl  relative ${
                     openAccordion === 5 ? 'text-black bo' : 'text-ina'
                   }`}
                 >
@@ -309,13 +319,13 @@ const Home = () => {
       >
         <div className='w-full lg:flex lg:justify-between'>
           <div className='w-full lg:w-2/5'>
-            <h1 className='text-4xl lg:text-6xl text-tblack font-roboto'>
+            <h1 className='text-2xl lg:text-4xl  2xl:text-5xl text-tblack font-roboto'>
               About Us
             </h1>
           </div>
           <div className='w-full lg:w-3/5 lg:flex lg:justify-end'>
             <div>
-              <p className='text-base lg:text-2xl'>
+              <p className='text-base lg:text-xl xl:text-2xl'>
                 At Zerta, we're more than just a Software development company
                 we're your Digital Partners, dedicated to bringing your vision
                 to life with innovative solutions tailored to your needs.
@@ -324,7 +334,7 @@ const Home = () => {
                 in the digital landscape.
               </p>
               <p
-                className={`text-base lg:text-2xl mt-5 ${
+                className={`text-base lg:text-xl xl:text-2xl mt-5 ${
                   isOpen
                     ? 'max-h-screen transition-max-height ease-in duration-300'
                     : 'max-h-0 overflow-hidden'
@@ -341,14 +351,14 @@ const Home = () => {
                 )}
               </p>
               <div
-                className={`text-base lg:text-2xl mt-5 ${
+                className={`text-base lg:text-xl xl:text-2xl mt-5 ${
                   isOpen
                     ? 'max-h-screen transition-max-height ease-in duration-300'
                     : 'max-h-0 overflow-hidden'
                 }`}
               >
                 {isOpen && (
-                  <p className='mt-5 text-base lg:text-2xl'>
+                  <p className='mt-5 text-base lg:text-xl xl:text-2xl'>
                     Welcome to Zerta – where we create one solution at a time
                     for your business.
                   </p>
@@ -369,14 +379,14 @@ const Home = () => {
         </div>
       </div>
       <div className='w-full p-4 md:p-0 md:px-12 md:py-8 lg:px-24  bg-primary'>
-        <div className='flex space-x-3'>
-          <div className='flex-grow'>
-            <h2 className='text-base lg:text-5xl text-white font-aclon leading-normal lg:leading-[68px]'>
+        <div className='flex'>
+          <div className='flex-grow pr-10'>
+            <h2 className='text-2xl lg:text-4xl  2xl:text-5xl text-white font-aclon leading-normal 2xl:leading-[68px] '>
               10x your Business results with {' '}
-              <br className='hidden lg:inline' /> the Digital Services we offer{' '}
-              <br className='hidden lg:inline' /> at Zerta
+              <br className='hidden xl:inline' /> the Digital Services we offer{' '}
+              <br className='hidden xl:inline' /> at Zerta
             </h2>
-            <p className='mt-4 text-gray-300'>
+            <p className='mt-4 text-gray-300 lg:text-xl'>
               Get in touch with us today and let’s help elevate your{' '}
               <br className='hidden lg:inline' /> business with our solutions.
             </p>
@@ -389,8 +399,8 @@ const Home = () => {
               </a>
             </div>
           </div>
-          <div className=''>
-            <img src='./asset/circle.png' alt='' />
+          <div className='h-full'>
+            <img src='./asset/circle.png' alt='' className='h-full' />
           </div>
         </div>
       </div>
@@ -400,7 +410,9 @@ const Home = () => {
         className='w-full p-4 md:p-0 md:px-12 md:py-8 lg:px-24 lg:py-16 bg-cream'
       >
         <div className='flex items-center justify-between'>
-          <h1 className='text-tblack text-4xl lg:text-6xl'>Our Products</h1>
+          <h1 className='text-tblack text-3xl lg:text-4xl  2xl:text-5xl'>
+            Our Products
+          </h1>
           <Link className='flex items-center space-x-2 text-tblack border border-tblack rounded-full py-3 px-4'>
             <span>See all</span>
             <FaArrowRight className='text-tblack' />
@@ -410,7 +422,7 @@ const Home = () => {
           <div className='accordion w-full lg:w-1/3'>
             <div className='accordion-header'>
               <div className='relative'>
-                <p className='border-b-2 border-bud text-base lg:text-5xl py-3 after:absolute after:w-64 after:border-b-2 after:border-primary after:bottom-0 after:left-0'>
+                <p className='border-b-2 border-bud text-base lg:text-2xl py-3 after:absolute after:w-64 after:border-b-2 after:border-primary after:bottom-0 after:left-0'>
                   Beema by Zerta
                 </p>
               </div>
@@ -423,7 +435,7 @@ const Home = () => {
               a break...
             </div>
           </div>
-          <div className='w-full lg:w-2/3'>
+          <div className='mt-8 lg:mt-0 w-full lg:w-2/3'>
             <img src='./asset/beema.png' alt='' />
           </div>
         </div>
@@ -436,7 +448,7 @@ const Home = () => {
           </p>
         </div>
         <div className='mt-8 lg:mt-14'>
-          <h1 className='text-4xl lg:text-6xl text-white font-roboto'>
+          <h1 className='text-3xl lg:text-5xl  2xl:text-6xl text-white font-roboto'>
             What our customers say
           </h1>
         </div>

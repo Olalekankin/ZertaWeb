@@ -2,14 +2,24 @@ import React from 'react'
 import { FaLinkedin, FaXTwitter } from 'react-icons/fa6'
 import { RiInstagramLine } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
+import { HashLink as Hash } from 'react-router-hash-link'
 
 const Footer = () => {
+
+  const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.scrollY
+    const yOffset = -114
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' })
+  }
+
   return (
     <footer className='w-full text-white font-lora border-t border-foo bg-primary bg-pattern bg-contain bg-no-repeat p-4 lg:p-0 lg:px-16 lg:py-24'>
       <div className='w-full lg:mx-0 font-roboto flex  lg:justify-between lg:items-start lg:flex-row lg:flex-nowrap flex-wrap flex-col'>
         <div className='w-full px-auto lg:px-0 lg:w-80 flex-shrink-0 lg:mx-0 mx-auto text-center lg:text-left'>
-          <Link
-            to={'/'}
+          <Hash
+            to={'/#home'}
+            smooth
+            scroll={(el) => scrollWithOffset(el)}
             className='flex items-center justify-center lg:justify-start'
           >
             <img
@@ -17,7 +27,7 @@ const Footer = () => {
               className='h-10 md:h-auto'
               alt='Zerta Logo'
             />
-          </Link>
+          </Hash>
           <p className='mt-2 text-base text-white font-normal font-lora'>
             With us, you get the highest level of customer satisfaction, we have
             a great workforce to deliver superior products and services to our
@@ -41,7 +51,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to='/'
+                  to=''
                   className='text-gray-400 hover:text-gray-200 font-normal'
                 >
                   Internship Program
@@ -49,7 +59,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to='/'
+                  to=''
                   className='text-gray-400 hover:text-gray-200 font-normal'
                 >
                   Worklife at Zerta
@@ -57,7 +67,7 @@ const Footer = () => {
               </li>
               <li className='flex items-center justify-center lg:justify-start space-x-1'>
                 <Link
-                  to='/'
+                  to=''
                   className='text-gray-400 hover:text-gray-200 font-normal'
                 >
                   Zerta Academy
@@ -74,12 +84,14 @@ const Footer = () => {
             </h2>
             <nav className='list-none mb-10 space-y-6'>
               <li>
-                <Link
-                  to='/'
+                <Hash
+                  to='/#about'
+                  smooth
+                  scroll={(el) => scrollWithOffset(el)}
                   className='text-gray-400 hover:text-gray-200 font-normal'
                 >
                   About
-                </Link>
+                </Hash>
               </li>
               <li>
                 <Link
@@ -102,7 +114,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to='/'
+                  to={'/contact'}
                   className='text-gray-400 hover:text-gray-200 font-normal'
                 >
                   Contact
