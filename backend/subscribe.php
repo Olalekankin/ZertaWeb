@@ -29,13 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get JSON content
     $data = json_decode(file_get_contents('php://input'), true);
 
-    $fullName = $conn->real_escape_string($data['fullName']);
     $email = $conn->real_escape_string($data['email']);
-    $reason = $conn->real_escape_string($data['reason']);
-    $message = $conn->real_escape_string($data['message']);
 
     // Insert data into MySQL database
-    $sql = "INSERT INTO contacts (fullName, email, reason, message) VALUES ('$fullName', '$email', '$reason', '$message')";
+    $sql = "INSERT INTO subscribers (email) VALUES ('$email')";
 
     if ($conn->query($sql) === TRUE) {
         // Send email
@@ -51,34 +48,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->Port = 465;                    // TCP port to connect to
 
             //Recipients
-            $mail->setFrom($email, $fullName);
-            $mail->addAddress('zertahq@gmail.com', 'Admin ZertaWeb');     // Add a recipient
+            $mail->setFrom('zertahq@gmail.com', 'ZertaWeb');
+            $mail->addAddress($email);     // Add a recipient
 
             //Content
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'New Contact Form Submission';
-            $mail->Body    = "Name: $fullName <br> Email: $email <br> Reason: $reason <br> Message: $message";
+            $mail->Subject = 'Subscription Confirmation';
+            $mail->Body    = "Thank you for subscribing to our newsletter!";
 
             $mail->send();
-            // echo 'Message has been sent';
-            $response = ['success' => true, 'message' => 'Message sent successfully'];
-
+            $response = ['success' => true, 'message' => 'Subscribed successfully'];
         } catch (Exception $e) {
-            // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-            $response = ['success' => false, 'message' => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"];
+            $response = ['success' => false, 'message' => "Failed to send confirmation email. Mailer Error: {$mail->ErrorInfo}"];
         }
     } else {
-        // echo "Error: " . $sql . "<br>" . $conn->error;
-        $response = ['success' => false, 'message' => 'Failed to store message in database'];
+        $response = ['success' => false, 'message' => 'Failed to subscribe'];
     }
 
-}else{
-    $response = ['success' => false, 'message' => 'Invalid request method'];
+    echo json_encode($response);
 }
 
-// Set the appropriate content type header
-header('Content-Type: application/json');
-// Output the JSON response
-echo json_encode($response);
-
 $conn->close();
+?>

@@ -23,6 +23,39 @@ const Home = () => {
     setIsOpen(!isOpen)
   }
 
+  const [formData, setFormData] = useState({
+    email: ''
+  });
+
+  const [response, setResponse] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch('/backend/subscribe.php', {
+    // const response = await fetch('/backend/response.json', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    const data = await response.json();
+
+    console.log(data);
+
+    if (response.ok) {
+      setResponse(data.message);
+    } else {
+      setResponse('Failed to send message');
+    }
+  };
+
   return (
     <div className='w-full bg-white mt-28'>
       <div className='w-full flex flex-col  lg:flex-row lg:flex-wrap'>
@@ -528,10 +561,11 @@ const Home = () => {
               Stay in the loop with our Tech Horizon newsletter
             </h2>
           </div>
-          <form className='w-full lg:w-1/2 flex items-center lg:justify-end space-x-4'>
+          <form onSubmit={handleSubmit} className='w-full lg:w-1/2 flex items-center lg:justify-end space-x-4'>
             <input
               type='email'
               placeholder='Your e-mail...'
+              onChange={handleChange}
               className='px-5 py-2 lg:py-4 rounded-full border border-grey w-2/3 lg:w-1/2'
             />
             <button

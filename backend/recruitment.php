@@ -12,9 +12,9 @@ header("Access-Control-Allow-Headers: Content-Type");
 
 // MySQL database connection
 $servername = "localhost"; // Change this if your database is hosted elsewhere
-$username = "root"; // Change this to your database username
-$password = ""; // Change this to your database password
-$dbname = "zertaweb"; // Change this to your database name
+$username = "zertang_web"; // Change this to your database username
+$password = "zertang_web"; // Change this to your database password
+$dbname = "zertang_web"; // Change this to your database name
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -46,16 +46,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         //Server settings
         $mail->isSMTP();
-        $mail->Host = 'mail.harkone.com.ng';  // Specify your SMTP server
+        $mail->Host = '	mail.zerta.ng';  // Specify your SMTP server
         $mail->SMTPAuth = true;
-        $mail->Username = 'mail@harkone.com.ng'; // SMTP username
-        $mail->Password = 'Whyarewefriends1';   // SMTP password
+        $mail->Username = 'support@zerta.ng'; // SMTP username
+        $mail->Password = 'Nigeria@1019';   // SMTP password
         $mail->SMTPSecure = 'ssl';            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 465;                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom("'$email'", "'$fullName'");
-        $mail->addAddress('mail@harkone.com.ng', 'Admin ZertaWeb');     // Add a recipient
+        $mail->setFrom($email, $fullName);
+        $mail->addAddress('zertahq@gmail.com', 'Admin ZertaWeb');     // Add a recipient
 
         //Attachments
         $mail->addAttachment($_FILES['cv']['tmp_name'], $_FILES['cv']['name']);    // Optional name
